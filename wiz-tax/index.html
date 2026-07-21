@@ -208,7 +208,7 @@ img{max-width:100%;display:block}
       </li>
     </ul>
     <div class="quote-box" style="display:flex;gap:24px;align-items:center;max-width:680px;margin:52px auto 0;text-align:left;background:var(--of-on-blue-soft);border:1px solid var(--of-on-blue-soft-border);border-radius:20px;padding:28px 32px;flex-wrap:wrap">
-      <div style="width:84px;height:84px;border-radius:16px;overflow:hidden;flex:none;background:var(--of-blue-pressed);display:flex;align-items:center;justify-content:center;color:var(--of-on-blue-mute);font-size:10px;text-align:center;padding:6px">Photo Guillaume</div>
+      <div style="width:84px;height:84px;border-radius:16px;overflow:hidden;flex:none;background:var(--of-blue-pressed)"><img src="/assets/img/guillaume-simonin.jpg" alt="Guillaume Simonin" style="width:100%;height:100%;object-fit:cover;display:block"></div>
       <blockquote style="flex:1;min-width:260px;font-size:16px;line-height:1.65;font-style:italic;color:#fff">« Vous ne vendez pas un placement. Vous révélez la fuite. Le prospect voit ce que sa situation lui coûte, en euros, et la décision vient de lui. »
         <span style="display:block;font-style:normal;font-weight:700;font-size:14px;margin-top:12px;color:var(--of-on-blue-mute)">Guillaume Simonin - Fondateur de WizExpert</span>
       </blockquote>
@@ -526,7 +526,7 @@ img{max-width:100%;display:block}
 <!-- ============ FONDATEUR ============ -->
 <section style="max-width:1200px;margin:0 auto;padding:96px 40px 80px">
   <div style="display:flex;gap:56px;align-items:center;flex-wrap:wrap">
-    <div style="width:280px;height:340px;border-radius:20px;overflow:hidden;background:var(--of-bg-input);flex:none;display:flex;align-items:center;justify-content:center;color:var(--of-mute);font-size:13px;text-align:center;padding:12px">Photo de Guillaume Simonin</div>
+    <div style="width:280px;height:340px;border-radius:20px;overflow:hidden;background:var(--of-bg-input);flex:none"><img src="/assets/img/guillaume-simonin.jpg" alt="Guillaume Simonin, fondateur de WizExpert" style="width:100%;height:100%;object-fit:cover;display:block"></div>
     <div style="flex:1 1 320px;min-width:0">
       <div style="font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--of-blue);margin-bottom:16px">Le fondateur</div>
       <h2 style="font-size:clamp(24px,2.8vw,32px);font-weight:700;letter-spacing:-1px;color:var(--of-ink);margin-bottom:16px">Guillaume Simonin</h2>
@@ -581,12 +581,12 @@ function setPlan(plan){
 
 // --- FAQ accordion ---
 var faqData = [
-  { q: "Comment WizTax s'intègre-t-il à mon site ?", a: "Réponse à compléter." },
-  { q: "Les données de mes prospects sont-elles sécurisées ?", a: "Réponse à compléter." },
-  { q: "Le calcul est-il à jour de la dernière loi de finances ?", a: "Réponse à compléter." },
-  { q: "Combien de temps pour prendre l'outil en main ?", a: "Réponse à compléter." },
-  { q: "Puis-je personnaliser le rapport à mes couleurs ?", a: "Réponse à compléter." },
-  { q: "Que se passe-t-il si je ne suis pas satisfait ?", a: "Réponse à compléter." }
+  { q: "Comment WizTax s'intègre-t-il à mon site ?", a: "En quelques minutes, sans compétence technique : vous ajoutez une simple ligne de code sur votre site, ou vous partagez un lien dédié (page, réseaux sociaux, signature d'email). Le simulateur reprend automatiquement votre identité visuelle." },
+  { q: "Les données de mes prospects sont-elles sécurisées ?", a: "Oui. Les données sont hébergées en Europe et traitées conformément au RGPD. Vous restez seul propriétaire des contacts générés : ils vous sont transmis directement, sans revente ni exploitation par un tiers." },
+  { q: "Le calcul est-il à jour de la dernière loi de finances ?", a: "Oui. Les barèmes et les règles de calcul sont mis à jour à chaque loi de finances, sans aucune action de votre part. Vos simulations restent donc toujours exactes." },
+  { q: "Combien de temps pour prendre l'outil en main ?", a: "Moins d'une heure. WizTax est pensé pour être utilisé sans formation : vous êtes opérationnel dès l'activation, et notre équipe reste disponible pour vous accompagner si besoin." },
+  { q: "Puis-je personnaliser le rapport à mes couleurs ?", a: "Absolument. Logo, couleurs, coordonnées et appel à l'action sont personnalisables, afin que chaque simulation et chaque rapport renforcent votre marque auprès de vos prospects." },
+  { q: "Que se passe-t-il si je ne suis pas satisfait ?", a: "Vous n'êtes engagé sur rien : l'abonnement est sans engagement de durée et résiliable à tout moment. Si WizTax ne vous convient pas, vous l'arrêtez quand vous le souhaitez." }
 ];
 (function(){
   var wrap = document.getElementById('faq');
