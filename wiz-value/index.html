@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WizValue — Attirez des dirigeants en illimité</title>
+<meta name="description" content="L'Outil qui révèle leur valeur… et affirme la vôtre. Le système de génération de leads pour attirer des dirigeants de PME.">
+<meta property="og:title" content="WizValue — Attirez des dirigeants en illimité">
+<meta property="og:description" content="L'Outil qui révèle leur valeur… et affirme la vôtre.">
+<meta property="og:type" content="website">
+<link rel="icon" href="https://framerusercontent.com/images/QftayIejGcMoVfuNQk4cZhGgQ.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --of-font:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --of-ease:cubic-bezier(.4,0,.2,1);
+  --of-ink:#1A1A1A; --of-ink-2:#4a4a4a; --of-mute:#8a8a8a;
+  --of-blue:#3340FA; --of-blue-pressed:#2A36E0; --of-blue-hover:#4450FA;
+  --of-lav:#D6D9FE; --of-blue-100:#E8E9FF; --of-blue-50:#F3F4FF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{font-family:var(--of-font);color:var(--of-ink);background:#fff;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:15px;padding:15px 30px;border-radius:12px;transition:background .2s var(--of-ease),transform .2s var(--of-ease);cursor:pointer}
+.btn-primary{background:var(--of-blue);color:#fff}
+.btn-primary:hover{background:var(--of-blue-pressed);transform:translateY(-1px)}
+.btn-outline{background:#fff;color:var(--of-ink);border:1px solid rgba(33,33,33,.22)}
+.btn-outline:hover{background:var(--of-blue-50);transform:translateY(-1px)}
+.arrow{width:16px;height:16px}
+
+h1{font-size:clamp(32px,4.2vw,40px);font-weight:700;letter-spacing:-2px;line-height:1.15;color:var(--of-ink)}
+h1 .hl{background:var(--of-lav);border-radius:12px;padding:2px 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.sec-title{font-size:clamp(26px,3.4vw,32px);font-weight:700;letter-spacing:-2px;line-height:1.2;text-align:center}
+.accent{color:var(--of-blue)}
+.rule{width:120px;height:6px;background:var(--of-blue);border-radius:3px;margin:18px auto 0}
+.rule.light{background:#fff}
+
+/* Nav */
+header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-gradient(#fff 62%,rgba(255,255,255,0))}
+.nav-pill{max-width:1200px;margin:0 auto;min-height:60px;background:#fff;border-radius:44px;box-shadow:0 1px 20px rgba(224,215,198,.55);display:flex;align-items:center;gap:24px;padding:10px 34px}
+.nav-pill .logo{height:26px;width:auto}
+.nav-links{margin-left:auto;display:flex;gap:26px}
+.nav-links a{font-size:15px;color:var(--of-ink);letter-spacing:-.3px;transition:color .2s}
+.nav-links a:hover{color:var(--of-blue)}
+
+/* Check badge */
+.cbadge{flex:none;width:22px;height:22px;border-radius:50%;background:var(--of-blue);display:inline-flex;align-items:center;justify-content:center;color:#fff}
+.cbadge svg{width:13px;height:13px}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;padding:44px 0 96px}
+.hero .sub{font-size:19px;font-weight:400;letter-spacing:-.4px;line-height:1.45;color:var(--of-ink-2);margin:22px 0 30px;max-width:480px}
+.hero-checks{display:flex;flex-direction:column;gap:16px;margin-bottom:34px;max-width:520px}
+.hero-checks .row{display:flex;gap:14px;align-items:flex-start}
+.hero-checks p{font-size:15px;line-height:1.5;color:var(--of-ink)}
+.hero-checks p b{font-weight:700}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-img img{width:100%;max-width:520px;margin-left:auto}
+
+/* Blue slab */
+.slab{background:var(--of-blue);color:#fff;border-radius:44px 44px 0 0;box-shadow:0 4px 80px rgba(0,0,0,.25);padding:92px 0}
+.slab.bottom{border-radius:44px 44px 0 0}
+.center-head{text-align:center;max-width:760px;margin:0 auto}
+.center-head h2{font-size:clamp(26px,3.6vw,34px);font-weight:700;letter-spacing:-1.5px;line-height:1.2}
+.vision-lead{text-align:center;margin:44px auto 8px;font-size:16px;line-height:1.5}
+.vision-lead b{font-weight:700}
+.vlist{max-width:640px;margin:26px auto 0;display:flex;flex-direction:column;gap:16px}
+.vlist .row{display:flex;gap:14px;align-items:flex-start}
+.vlist .cbadge{background:#fff;color:var(--of-blue)}
+.vlist p{font-size:16px;line-height:1.5;color:#fff}
+.vlist p b{font-weight:700}
+.quote{display:flex;gap:44px;align-items:center;max-width:940px;margin:64px auto 0;flex-wrap:wrap;justify-content:center}
+.quote img{width:230px;height:auto;border-radius:20px;flex:none;object-fit:cover}
+.quote blockquote{flex:1;min-width:300px;font-size:17px;line-height:1.65;font-style:italic;color:#fff;text-align:center}
+.quote blockquote b{font-weight:700}
+.quote .who{display:block;font-style:normal;font-weight:700;font-size:15px;margin-top:16px}
+
+/* White / light sections */
+.sec{padding:92px 0;background:#fff}
+.sec.soft{background:#F7F7FB}
+.sec-head{text-align:center;max-width:760px;margin:0 auto 40px}
+.sec-head .lead{font-size:16px;line-height:1.6;color:var(--of-ink-2);margin-top:20px}
+
+/* Toggle */
+.toggle{display:flex;justify-content:center;margin:34px 0 44px}
+.toggle .inner{background:#fff;border:1px solid #ececec;border-radius:64px;padding:6px;display:flex;gap:6px;box-shadow:0 4px 14px rgba(0,0,0,.05)}
+.toggle button{border:none;font-family:inherit;font-size:15px;font-weight:500;border-radius:64px;padding:12px 22px;cursor:pointer;background:transparent;color:var(--of-mute);display:inline-flex;align-items:center;gap:10px;transition:all .2s var(--of-ease)}
+.toggle button.active{background:#fff;color:var(--of-ink);box-shadow:0 4px 10px rgba(0,0,0,.1)}
+.toggle button .ic{width:20px;height:20px;opacity:.7}
+
+/* Solution */
+.solution{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1000px;margin:0 auto}
+.solution h3{font-size:22px;font-weight:700;letter-spacing:-.8px;line-height:1.25;margin-bottom:22px}
+.feat-list{display:flex;flex-direction:column;gap:16px}
+.feat-list .row{display:flex;gap:14px;align-items:flex-start}
+.feat-list p{font-size:15px;line-height:1.5;color:var(--of-ink)}
+.feat-list p b{font-weight:700}
+.media-round img{width:100%;border-radius:20px;box-shadow:0 20px 44px rgba(0,0,0,.18)}
+
+/* System panel */
+.sys-panel{max-width:1000px;margin:0 auto;border:1.5px dashed #c9ccf6;border-radius:20px;padding:20px;background:#F3F4FF}
+.sys-tabs{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.sys-tabs .tab{font-family:'Caveat',cursive;font-size:19px;font-weight:600;padding:6px 18px;border-radius:10px}
+.sys-tabs .tab.on{background:var(--of-blue);color:#fff}
+.sys-tabs .tab.off{background:#fff;color:var(--of-ink);border:1px solid #d7d7e2}
+.sys-panel img{width:100%;border-radius:12px}
+.center-cta{display:flex;justify-content:center;margin-top:40px}
+
+/* Pricing */
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1000px;margin:0 auto;align-items:stretch}
+.pcard{background:#fff;border-radius:32px;box-shadow:0 30px 60px rgba(0,0,0,.14);padding:40px 36px;display:flex;flex-direction:column}
+.pcard h3{font-size:28px;font-weight:700;letter-spacing:-1px;text-align:center;margin-bottom:22px}
+.pcard h3 .accent{color:var(--of-blue)}
+.pfeats{display:flex;flex-direction:column;gap:15px;border-top:1px solid #eee;padding-top:22px;margin-bottom:22px}
+.pfeats .row{display:flex;gap:12px;align-items:center;font-size:15px;font-weight:600;color:var(--of-ink)}
+.pfeats .plus{flex:none;width:24px;height:24px;border-radius:50%;background:var(--of-blue);color:#fff;display:inline-flex;align-items:center;justify-content:center}
+.pfeats .plus svg{width:14px;height:14px}
+.poffer{text-align:center;font-size:20px;font-weight:700;margin-top:auto}
+.poffer .accent{color:var(--of-blue)}
+.psub{text-align:center;font-size:12.5px;color:var(--of-mute);margin:6px 0 20px}
+
+/* Founder */
+.founder{background:var(--of-blue);color:#fff;border-radius:44px 44px 0 0;box-shadow:0 4px 80px rgba(0,0,0,.25);padding:92px 0 72px}
+.founder-inner{display:flex;gap:48px;align-items:center;flex-wrap:wrap;max-width:1040px;margin:0 auto;position:relative}
+.founder-photo{width:210px;height:230px;border-radius:24px;overflow:hidden;flex:none;box-shadow:0 20px 40px rgba(0,0,0,.25)}
+.founder-photo img{width:100%;height:100%;object-fit:cover}
+.founder-body{flex:1;min-width:320px;position:relative}
+.founder-body h2{font-size:clamp(26px,3.2vw,32px);font-weight:700;letter-spacing:-1.5px;margin-bottom:16px}
+.founder-body p{font-size:15px;line-height:1.6;color:rgba(255,255,255,.94);max-width:560px}
+.founder-body p b{font-weight:700}
+.founder-body ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:12px}
+.founder-body li{display:flex;gap:12px;align-items:center;font-size:14.5px}
+.founder-body li:before{content:"";width:6px;height:6px;border-radius:50%;background:#fff;flex:none}
+.founder-book{position:absolute;right:0;top:38%;width:130px;transform:translateY(-10%)}
+.founder-book img{width:100%}
+.logos{display:flex;gap:40px;align-items:center;justify-content:center;flex-wrap:wrap;max-width:1040px;margin:56px auto 0}
+.logos img{height:34px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.9}
+
+/* Testimonials */
+.shapo-wrap{max-width:1080px;margin:0 auto;overflow:hidden}
+.shapo-wrap iframe{width:100%;height:660px;border:none;display:block;overflow:hidden}
+@media (max-width:760px){.shapo-wrap iframe{height:1180px}}
+
+/* Footer */
+.site-footer{background:var(--of-blue);color:#fff;padding:56px 40px 40px;border-top:1px solid var(--of-blue-hover)}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid var(--of-blue-hover)}
+.footer-brand{max-width:340px}
+.footer-word{font-weight:700;font-size:20px;letter-spacing:-.5px;margin-bottom:12px}
+.footer-base{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.80)}
+.footer-col-h{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.60);margin-bottom:10px}
+.footer-mail{font-size:14px;color:rgba(255,255,255,.80);font-weight:500}
+.footer-socials{display:flex;gap:14px;margin-top:12px}
+.footer-socials a{color:rgba(255,255,255,.80);transition:color .2s}
+.footer-socials a:hover{color:#fff}
+.footer-legal{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:24px}
+.footer-legal small{font-size:12px;color:rgba(255,255,255,.60)}
+.footer-legal .links{display:flex;gap:24px}
+.footer-legal .links a{font-size:12px;color:rgba(255,255,255,.60);font-weight:500;transition:color .2s}
+.footer-legal .links a:hover{color:#fff}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s var(--of-ease),transform .7s var(--of-ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important}}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:40px}
+  .hero-img img{margin:0 auto;max-width:420px}
+  .solution{grid-template-columns:1fr;gap:36px}
+  .solution .media-round{order:-1}
+  .price-grid{grid-template-columns:1fr;max-width:460px}
+  .founder-book{position:static;transform:none;width:110px;margin:20px auto 0}
+  .founder-inner{flex-direction:column;text-align:center}
+  .founder-body ul{align-items:center}
+}
+@media (max-width:760px){ .nav-links{display:none} }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <nav class="nav-pill">
+    <a href="/"><img class="logo" src="https://framerusercontent.com/images/JT1Uk5NwZjmiN9cdwfs6GwMs9Y.png" alt="WizValue"></a>
+    <div class="nav-links">
+      <a href="#vision">Vision</a>
+      <a href="#solution">Solution</a>
+      <a href="#offer">Offre</a>
+      <a href="#gs">À propos</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO (fond blanc) -->
+<section class="wrap hero" id="hero">
+  <div>
+    <h1>Attirez des dirigeants en <span class="hl">illimité avec WizValue</span></h1>
+    <p class="sub">L'Outil qui révèle leur valeur… et affirme la vôtre.</p>
+    <div class="hero-checks">
+      <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Une <b>estimation automatisée</b>, professionnelle et instantanée qui renforce votre crédibilité sans lever le petit doigt.</p></div>
+      <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Vos prospects vous perçoivent comme <b>l'expert de confiance</b> avant même le premier échange.</p></div>
+      <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Résultat</b> : plus de rendez-vous, plus d'honoraires, plus d'impact.</p></div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#offer">Découvrir notre offre <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a class="btn btn-outline" href="https://calendly.com/julien-wizify/wizexpert" rel="noopener" target="_blank">Réserver une démo</a>
+    </div>
+  </div>
+  <div class="hero-img"><img src="https://framerusercontent.com/images/aPZlHYkUk6zeCLFiQU6UT0SvTk.png?width=1500&height=1500" alt="Rapport de valorisation WizValue"></div>
+</section>
+
+<!-- VISION (slab bleu) -->
+<section class="slab" id="vision">
+  <div class="wrap">
+    <div class="center-head">
+      <h2>Pourquoi la valorisation est votre plus grand levier d'acquisition (et de fidélisation)</h2>
+      <div class="rule light"></div>
+    </div>
+    <p class="vision-lead"><b>98 % des dirigeants de PME ne connaissent pas la valeur de leur entreprise.</b><br>Et pourtant :</p>
+    <div class="vlist">
+      <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>leur entreprise est souvent leur <b>patrimoine principal</b></p></div>
+      <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>c'est <b>la clé</b> de leur retraite, de leur transmission, de leur cession future</p></div>
+      <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>et une <b>porte d'entrée</b> vers tous vos services de conseil</p></div>
+    </div>
+    <div class="quote">
+      <img src="https://framerusercontent.com/images/kITAhXST2SqGvfJynxzkXjYpzhM.jpeg?width=403&height=510" alt="Guillaume Simonin">
+      <blockquote>« Vous ne <b>proposez pas un service</b>. Vous mettez des <b>mots et une valeur</b> sur ce qu'ils ont mis toute leur <b>vie à construire</b>. Et vous les <b>attirerez</b> naturellement avec un rapport de valorisation de leur société. »
+        <span class="who">Guillaume Simonin, co-fondateur de WizValue</span>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="sec" id="solution">
+  <div class="sec-head"><h2 class="sec-title">Une <span class="accent">solution</span> pour chaque type de professionnel</h2><div class="rule"></div></div>
+  <div class="toggle">
+    <div class="inner">
+      <button class="active"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>CGP Indépendant</button>
+      <button><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M15 20a5 5 0 0 1 6-4.5"/></svg>Cabinets, réseaux ou services financiers</button>
+    </div>
+  </div>
+  <div class="solution wrap">
+    <div>
+      <h3>Passez de « conseiller invisible » à « révélateur de valeur »</h3>
+      <div class="feat-list">
+        <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Votre <b>propre lien d'estimation</b> à diffuser sur LinkedIn, en signature mail ou lors d'évènements</p></div>
+        <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Un <b>quiz interactif</b> pour collecter les infos clés en quelques minutes</p></div>
+        <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Un <b>rapport PDF</b> à votre nom, généré automatiquement</p></div>
+        <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Des <b>scripts prêts à l'emploi</b> pour enclencher un RDV stratégique</p></div>
+        <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Accès à nos <b>templates</b> de séquences mail + <b>masterclass</b> « Valorisation &amp; Conversion »</p></div>
+      </div>
+    </div>
+    <div class="media-round"><img src="https://framerusercontent.com/images/uyQpJfTh6Hd4ub4wG9WPAaWiPgA.gif?width=852&height=480" alt="Démonstration WizValue"></div>
+  </div>
+</section>
+
+<!-- SYSTEM -->
+<section class="sec">
+  <div class="sec-head">
+    <h2 class="sec-title">Ce que <span class="accent">WizValue</span> vous permet d'obtenir</h2>
+    <div class="rule"></div>
+    <p class="lead">Le <b>système de génération de leads</b> conçu pour <b>performer sans effort</b>.</p>
+  </div>
+  <div class="wrap">
+    <div class="sys-panel">
+      <div class="sys-tabs">
+        <span class="tab on">Inbound/Outbound</span>
+        <span class="tab on">Landing Page</span>
+        <span class="tab on">Questionnaire</span>
+        <span class="tab on">Rapport</span>
+        <span class="tab on">Email nurturing</span>
+        <span class="tab off">Appel stratégique</span>
+        <span class="tab off">Accompagnement</span>
+      </div>
+      <img src="https://framerusercontent.com/images/mAvtUfnxRWFhlYoUe1jhBPwlM.png?width=9944&height=2600" alt="Le système WizValue">
+    </div>
+    <div class="center-cta">
+      <a class="btn btn-primary" href="#offer">Découvrez notre offre spéciale <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRE -->
+<section class="sec soft" id="offer">
+  <div class="sec-head"><h2 class="sec-title">Deux offres. Une mission :<br>Faire de vous un <span class="accent">révélateur de valeur</span></h2></div>
+  <div class="toggle">
+    <div class="inner">
+      <button class="active"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>CGP indépendant</button>
+      <button><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M15 20a5 5 0 0 1 6-4.5"/></svg>Cabinets, réseaux ou services financiers</button>
+    </div>
+  </div>
+  <div class="price-grid wrap">
+    <div class="pcard">
+      <h3>Licence <span class="accent">à vie</span></h3>
+      <div class="pfeats">
+        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Un utilisateur</div>
+        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Quiz de collecte</div>
+        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Rapport en PDF</div>
+        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Séquences e-mail + accompagnement</div>
+      </div>
+      <div class="poffer">Offre <span class="accent">spéciale</span><br>de lancement</div>
+      <div class="psub">&nbsp;</div>
+      <a class="btn btn-primary" href="https://tally.so/r/MeKx7Y" rel="noopener" target="_blank" style="width:100%">Profiter de l'offre de lancement <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+    <div class="pcard">
+      <h3>Offre <span class="accent">adaptée</span><br>à ses besoins</h3>
+      <div class="pfeats">
+        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Nombre d'utilisateurs illimités</div>
+        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Intégration CRM / API</div>
+        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Portail multi-valorisations</div>
+        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Accompagnement onboarding</div>
+        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Support prioritaire</div>
+      </div>
+      <div class="poffer">Un canal d'acquisition<br>pour tout le réseau</div>
+      <div class="psub">&nbsp;</div>
+      <a class="btn btn-primary" href="https://tally.so/r/MeKx7Y" rel="noopener" target="_blank" style="width:100%">Demandez un devis personnalisé <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="sec">
+  <div class="sec-head"><h2 class="sec-title">Ils ont déjà <span class="accent">testé et approuvé</span> nos solutions</h2><div class="rule"></div><p class="lead">Et ils sont loin d'être les seuls !</p></div>
+  <div class="shapo-wrap"><iframe src="https://app.shapo.io/widgets/495064bfbbc88e6f7bf4" loading="lazy" scrolling="no" referrerpolicy="no-referrer" title="Avis clients WizValue"></iframe></div>
+</section>
+
+<!-- FONDATEUR -->
+<section class="founder" id="gs">
+  <div class="founder-inner">
+    <div class="founder-photo"><img src="https://framerusercontent.com/images/hiOry8B2VbkfJSWhLptJ5jFTg68.png?width=800&height=800" alt="Guillaume Simonin"></div>
+    <div class="founder-body">
+      <h2>Guillaume Simonin</h2>
+      <p>Ancien CGP, je développe aujourd'hui des <b>contenus pédagogiques et des solutions</b> pour aider les CGP à développer leur cabinet en exploitant le <b>pouvoir de l'éducation financière</b> :</p>
+      <ul>
+        <li>Créateur des <b>feuilles volantes®</b></li>
+        <li><b>+140k abonnés</b> sur les réseaux</li>
+        <li>Auteur du livre <b>Le guide visuel d'éducation financière</b></li>
+        <li>Chroniqueur <b>BFM Business</b></li>
+      </ul>
+      <div class="founder-book"><img src="https://framerusercontent.com/images/jnsCLcRsjG6BLSQdY8UMogufC4.png?width=418&height=597" alt="Le guide visuel d'éducation financière"></div>
+    </div>
+  </div>
+  <div class="logos">
+    <img src="https://framerusercontent.com/images/36utaSqKn339Mlw9tkHbB1OxEc.png" alt="Crédit Agricole">
+    <img src="https://framerusercontent.com/images/IeFApavw7DEMkyza3GUIpeOPVTA.png" alt="Société Générale">
+    <img src="https://framerusercontent.com/images/Kc3fLjSG9rUYxRq2nMsqwx6ryI.png" alt="Atland Voisin">
+    <img src="https://framerusercontent.com/images/ZIiT5u8lrw5Ms0jwB0YHKMEkSI.png" alt="BNP Paribas">
+    <img src="https://framerusercontent.com/images/vryKhwLLBFuJSdrvAJrXXDuUBWA.png" alt="Spirica">
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-word">WizValue</div>
+        <p class="footer-base">L'outil qui révèle la valeur des entreprises et affirme la vôtre. Un outil de l'écosystème WizExpert.</p>
+      </div>
+      <div>
+        <div class="footer-col-h">Contact</div>
+        <a class="footer-mail" href="mailto:contact@wizexpert.fr">contact@wizexpert.fr</a>
+        <div class="footer-socials">
+          <a href="#" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a href="#" aria-label="X"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <small>© 2026 WizExpert · WizValue. Tous droits réservés.</small>
+      <div class="links">
+        <a href="/mentions-legales">Mentions légales</a>
+        <a href="/cgv-wizvalue">CGV</a>
+        <a href="/politique-de-confidentialite">RGPD</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Toggles (visuels)
+document.querySelectorAll('.toggle .inner').forEach(function(g){
+  g.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click',function(){g.querySelectorAll('button').forEach(function(x){x.classList.remove('active')});b.classList.add('active');});
+  });
+});
+// Reveal au scroll
+(function(){
+  var t=[].slice.call(document.querySelectorAll('.hero > div, .center-head, .vision-lead, .vlist, .quote, .sec-head, .solution > div, .sys-panel, .center-cta, .pcard, .shapo-wrap, .founder-inner, .logos'));
+  t.forEach(function(e){e.classList.add('reveal')});
+  if(!('IntersectionObserver' in window)){t.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){var el=x.target,s=[].slice.call(el.parentElement.children),i=Math.max(0,s.indexOf(el));el.style.transitionDelay=Math.min(i*70,300)+'ms';el.classList.add('in');io.unobserve(el);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  t.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
