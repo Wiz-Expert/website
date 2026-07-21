@@ -156,7 +156,7 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-word">WizExpert</div>
+        <div class="footer-word"><a href="https://www.wiz-expert.com/" style="color:inherit;text-decoration:none">WizExpert</a></div>
         <p class="footer-base">La pédagogie visuelle pour décupler son activité de CGP indépendant. WizApp · WizValue · WizTax.</p>
       </div>
       <div>
@@ -165,7 +165,7 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
       </div>
     </div>
     <div class="footer-legal">
-      <small>© 2026 WizExpert. Tous droits réservés.</small>
+      <small>© <span data-year>2026</span> <a href="https://www.wiz-expert.com/" style="color:inherit;text-decoration:none">WizExpert</a>. Tous droits réservés.</small>
       <div class="links">
         <a href="/mentions-legales">Mentions légales</a>
         <a href="/cgv">CGV</a>
@@ -174,5 +174,6 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
     </div>
   </div>
 </footer>
+<script>document.querySelectorAll("[data-year]").forEach(function(e){e.textContent=new Date().getFullYear()});</script>
 </body>
 </html>
