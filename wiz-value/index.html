@@ -65,7 +65,6 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
 
 /* Blue slab */
 .slab{background:var(--of-blue);color:#fff;border-radius:44px 44px 0 0;box-shadow:0 4px 80px rgba(0,0,0,.25);padding:92px 0}
-.slab.bottom{border-radius:44px 44px 0 0}
 .center-head{text-align:center;max-width:760px;margin:0 auto}
 .center-head h2{font-size:clamp(26px,3.6vw,34px);font-weight:700;letter-spacing:-1.5px;line-height:1.2}
 .vision-lead{text-align:center;margin:44px auto 8px;font-size:16px;line-height:1.5}
@@ -95,6 +94,7 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
 .toggle button .ic{width:20px;height:20px;opacity:.7}
 
 /* Solution */
+.panel[hidden]{display:none}
 .solution{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1000px;margin:0 auto}
 .solution h3{font-size:22px;font-weight:700;letter-spacing:-.8px;line-height:1.25;margin-bottom:22px}
 .feat-list{display:flex;flex-direction:column;gap:16px}
@@ -114,16 +114,18 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
 
 /* Pricing */
 .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1000px;margin:0 auto;align-items:stretch}
-.pcard{background:#fff;border-radius:32px;box-shadow:0 30px 60px rgba(0,0,0,.14);padding:40px 36px;display:flex;flex-direction:column}
+.pcard{background:#fff;border-radius:32px;box-shadow:0 30px 60px rgba(0,0,0,.14);padding:40px 36px;display:flex;flex-direction:column;transition:opacity .25s var(--of-ease),box-shadow .25s var(--of-ease)}
+.price-wrap[data-plan="cgp"] .card-cab,
+.price-wrap[data-plan="cab"] .card-cgp{opacity:.42;box-shadow:0 12px 30px rgba(0,0,0,.06)}
 .pcard h3{font-size:28px;font-weight:700;letter-spacing:-1px;text-align:center;margin-bottom:22px}
 .pcard h3 .accent{color:var(--of-blue)}
-.pfeats{display:flex;flex-direction:column;gap:15px;border-top:1px solid #eee;padding-top:22px;margin-bottom:22px}
+.pfeats{display:flex;flex-direction:column;gap:15px;border-top:1px solid #eee;border-bottom:1px solid #eee;padding:22px 0;margin-bottom:22px}
 .pfeats .row{display:flex;gap:12px;align-items:center;font-size:15px;font-weight:600;color:var(--of-ink)}
 .pfeats .plus{flex:none;width:24px;height:24px;border-radius:50%;background:var(--of-blue);color:#fff;display:inline-flex;align-items:center;justify-content:center}
 .pfeats .plus svg{width:14px;height:14px}
-.poffer{text-align:center;font-size:20px;font-weight:700;margin-top:auto}
+.poffer{text-align:center;font-size:22px;font-weight:700;margin:auto 0}
 .poffer .accent{color:var(--of-blue)}
-.psub{text-align:center;font-size:12.5px;color:var(--of-mute);margin:6px 0 20px}
+.pspace{flex:1}
 
 /* Founder */
 .founder{background:var(--of-blue);color:#fff;border-radius:44px 44px 0 0;box-shadow:0 4px 80px rgba(0,0,0,.25);padding:92px 0 72px}
@@ -198,7 +200,7 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
   </nav>
 </header>
 
-<!-- HERO (fond blanc) -->
+<!-- HERO -->
 <section class="wrap hero" id="hero">
   <div>
     <h1>Attirez des dirigeants en <span class="hl">illimité avec WizValue</span></h1>
@@ -216,7 +218,7 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
   <div class="hero-img"><img src="https://framerusercontent.com/images/aPZlHYkUk6zeCLFiQU6UT0SvTk.png?width=1500&height=1500" alt="Rapport de valorisation WizValue"></div>
 </section>
 
-<!-- VISION (slab bleu) -->
+<!-- VISION -->
 <section class="slab" id="vision">
   <div class="wrap">
     <div class="center-head">
@@ -241,13 +243,14 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
 <!-- SOLUTION -->
 <section class="sec" id="solution">
   <div class="sec-head"><h2 class="sec-title">Une <span class="accent">solution</span> pour chaque type de professionnel</h2><div class="rule"></div></div>
-  <div class="toggle">
+  <div class="toggle" data-group="sol">
     <div class="inner">
-      <button class="active"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>CGP Indépendant</button>
-      <button><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M15 20a5 5 0 0 1 6-4.5"/></svg>Cabinets, réseaux ou services financiers</button>
+      <button data-tab="cgp" class="active"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>CGP Indépendant</button>
+      <button data-tab="cab"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M15 20a5 5 0 0 1 6-4.5"/></svg>Cabinets, réseaux ou services financiers</button>
     </div>
   </div>
-  <div class="solution wrap">
+  <!-- Panel CGP : texte à gauche, mockup à droite -->
+  <div class="solution wrap panel" data-group="sol" data-tab="cgp">
     <div>
       <h3>Passez de « conseiller invisible » à « révélateur de valeur »</h3>
       <div class="feat-list">
@@ -259,6 +262,20 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
       </div>
     </div>
     <div class="media-round"><img src="https://framerusercontent.com/images/uyQpJfTh6Hd4ub4wG9WPAaWiPgA.gif?width=852&height=480" alt="Démonstration WizValue"></div>
+  </div>
+  <!-- Panel Cabinets : mockup à gauche, texte à droite -->
+  <div class="solution wrap panel" data-group="sol" data-tab="cab" hidden>
+    <div class="media-round"><img src="https://framerusercontent.com/images/uyQpJfTh6Hd4ub4wG9WPAaWiPgA.gif?width=852&height=480" alt="Démonstration WizValue"></div>
+    <div>
+      <h3>Scalez votre efficacité. Standardisez vos entretiens. Boostez votre valeur perçue.</h3>
+      <div class="feat-list">
+        <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Plateforme <b>multi-utilisateurs</b> avec droits d'accès par conseiller</p></div>
+        <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p>Rapports en <b>marque blanche</b>, personnalisables selon vos besoins</p></div>
+        <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Connecteurs</b> CRM &amp; API</p></div>
+        <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Accompagnement</b> onboarding + support <b>prioritaire</b></p></div>
+        <div class="row"><span class="cbadge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><p><b>Reporting centralisé</b> pour suivre les performances</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -291,37 +308,40 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
 <!-- OFFRE -->
 <section class="sec soft" id="offer">
   <div class="sec-head"><h2 class="sec-title">Deux offres. Une mission :<br>Faire de vous un <span class="accent">révélateur de valeur</span></h2></div>
-  <div class="toggle">
-    <div class="inner">
-      <button class="active"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>CGP indépendant</button>
-      <button><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M15 20a5 5 0 0 1 6-4.5"/></svg>Cabinets, réseaux ou services financiers</button>
-    </div>
-  </div>
-  <div class="price-grid wrap">
-    <div class="pcard">
-      <h3>Licence <span class="accent">à vie</span></h3>
-      <div class="pfeats">
-        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Un utilisateur</div>
-        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Quiz de collecte</div>
-        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Rapport en PDF</div>
-        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Séquences e-mail + accompagnement</div>
+  <div class="price-wrap" data-plan="cgp">
+    <div class="toggle" data-group="offre">
+      <div class="inner">
+        <button data-tab="cgp" class="active"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>CGP indépendant</button>
+        <button data-tab="cab"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20a6 6 0 0 1 12 0M15 20a5 5 0 0 1 6-4.5"/></svg>Cabinets, réseaux ou services financiers</button>
       </div>
-      <div class="poffer">Offre <span class="accent">spéciale</span><br>de lancement</div>
-      <div class="psub">&nbsp;</div>
-      <a class="btn btn-primary" href="https://tally.so/r/MeKx7Y" rel="noopener" target="_blank" style="width:100%">Profiter de l'offre de lancement <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
-    <div class="pcard">
-      <h3>Offre <span class="accent">adaptée</span><br>à ses besoins</h3>
-      <div class="pfeats">
-        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Nombre d'utilisateurs illimités</div>
-        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Intégration CRM / API</div>
-        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Portail multi-valorisations</div>
-        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Accompagnement onboarding</div>
-        <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Support prioritaire</div>
+    <div class="price-grid wrap">
+      <!-- Licence à vie (CGP) -->
+      <div class="pcard card-cgp">
+        <h3>Licence <span class="accent">à vie</span></h3>
+        <div class="pfeats">
+          <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Un utilisateur</div>
+          <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Quiz de collecte</div>
+          <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Rapport en PDF</div>
+          <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Séquences e-mail + accompagnement</div>
+        </div>
+        <div class="poffer">Offre <span class="accent">spéciale</span><br>de lancement</div>
+        <div class="pspace"></div>
+        <a class="btn btn-primary" href="https://tally.so/r/MeKx7Y" rel="noopener" target="_blank" style="width:100%;margin-top:22px">Profiter de l'offre de lancement <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-      <div class="poffer">Un canal d'acquisition<br>pour tout le réseau</div>
-      <div class="psub">&nbsp;</div>
-      <a class="btn btn-primary" href="https://tally.so/r/MeKx7Y" rel="noopener" target="_blank" style="width:100%">Demandez un devis personnalisé <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <!-- Offre adaptée (Cabinets) -->
+      <div class="pcard card-cab">
+        <h3>Offre <span class="accent">adaptée</span><br>à ses besoins</h3>
+        <div class="pfeats">
+          <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Nombre d'utilisateurs illimités</div>
+          <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Intégration CRM/API</div>
+          <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Portail multi-valorisations</div>
+          <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Accompagnement onboarding</div>
+          <div class="row"><span class="plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Support prioritaire</div>
+        </div>
+        <div class="pspace"></div>
+        <a class="btn btn-primary" href="https://tally.so/r/MeKx7Y" rel="noopener" target="_blank" style="width:100%;margin-top:22px">Demandez un devis personnalisé <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
@@ -386,15 +406,23 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
 </footer>
 
 <script>
-// Toggles (visuels)
-document.querySelectorAll('.toggle .inner').forEach(function(g){
-  g.querySelectorAll('button').forEach(function(b){
-    b.addEventListener('click',function(){g.querySelectorAll('button').forEach(function(x){x.classList.remove('active')});b.classList.add('active');});
+// Toggles
+document.querySelectorAll('.toggle').forEach(function(tg){
+  var group=tg.getAttribute('data-group');
+  tg.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var tab=b.getAttribute('data-tab');
+      tg.querySelectorAll('button').forEach(function(x){x.classList.toggle('active',x===b);});
+      // Solution : bascule de panneau
+      document.querySelectorAll('.panel[data-group="'+group+'"]').forEach(function(p){p.hidden=(p.getAttribute('data-tab')!==tab);});
+      // Offre : met en avant / grise
+      if(group==='offre'){var w=document.querySelector('.price-wrap');if(w)w.setAttribute('data-plan',tab);}
+    });
   });
 });
 // Reveal au scroll
 (function(){
-  var t=[].slice.call(document.querySelectorAll('.hero > div, .center-head, .vision-lead, .vlist, .quote, .sec-head, .solution > div, .sys-panel, .center-cta, .pcard, .shapo-wrap, .founder-inner, .logos'));
+  var t=[].slice.call(document.querySelectorAll('.hero > div, .center-head, .vision-lead, .vlist, .quote, .sec-head, .panel, .sys-panel, .center-cta, .pcard, .shapo-wrap, .founder-inner, .logos'));
   t.forEach(function(e){e.classList.add('reveal')});
   if(!('IntersectionObserver' in window)){t.forEach(function(e){e.classList.add('in')});return;}
   var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){var el=x.target,s=[].slice.call(el.parentElement.children),i=Math.max(0,s.indexOf(el));el.style.transitionDelay=Math.min(i*70,300)+'ms';el.classList.add('in');io.unobserve(el);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
