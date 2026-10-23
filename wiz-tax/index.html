@@ -79,7 +79,10 @@ img{max-width:100%;display:block}
 }
 @media (max-width:860px){
   .cards-3{grid-template-columns:1fr!important}
-  .feat-row{grid-template-columns:1fr!important;gap:32px!important}
+  .feat-row{grid-template-columns:minmax(0,1fr)!important;gap:32px!important}
+  .feat-row > *{min-width:0}
+  .feat-row .feat-media{padding:24px 16px!important}
+  .feat-row .feat-media > div[style*="width:300px"]{width:100%!important;max-width:300px}
   .feat-row .feat-media{order:2!important}
   .feat-row .feat-text{order:1!important}
   .timeline-grid{grid-template-columns:1fr!important}
@@ -296,7 +299,7 @@ img{max-width:100%;display:block}
     </div>
     <div style="border-top:1px solid var(--of-line-3);margin-top:36px;padding-top:24px;display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
       <span style="display:inline-flex;align-items:center;gap:8px;background:var(--of-blue-50);color:var(--of-blue);font-weight:700;font-size:13px;padding:8px 16px;border-radius:24px;flex:none">Show, don't tell.</span>
-      <span style="flex:1;min-width:280px;font-size:13.5px;line-height:1.6;color:var(--of-ink-2)"><b style="color: var(--of-ink);">WizTax n'est pas un simulateur</b> — c'est un outil de planification fiscale.<br>Le prospect arrive au rendez-vous en connaissant déjà son problème, chiffré.<span style="display: block; font-size: 11px; color: var(--of-mute); margin-top: 6px;">Les visualisations bien conçues améliorent la qualité de décision et réduisent le temps de réponse (Management Review Quarterly, 2021).</span></span>
+      <span style="flex:1 1 240px;min-width:0;font-size:13.5px;line-height:1.6;color:var(--of-ink-2)"><b style="color: var(--of-ink);">WizTax n'est pas un simulateur</b> — c'est un outil de planification fiscale.<br>Le prospect arrive au rendez-vous en connaissant déjà son problème, chiffré.<span style="display: block; font-size: 11px; color: var(--of-mute); margin-top: 6px;">Les visualisations bien conçues améliorent la qualité de décision et réduisent le temps de réponse (Management Review Quarterly, 2021).</span></span>
     </div>
   </div>
 </section>
