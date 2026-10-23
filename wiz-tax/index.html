@@ -95,8 +95,17 @@ img{max-width:100%;display:block}
   .nav-pill{gap:12px!important;padding:0 8px 0 18px!important}
 }
 @media (max-width:520px){
+  header{padding-left:12px!important;padding-right:12px!important}
+  .nav-pill{gap:10px!important}
+  .nav-actions{gap:10px!important}
+  .nav-login{font-size:13px!important}
+  .nav-demo{font-size:13px!important;padding:9px 12px!important}
+  .nav-demo svg{display:none}
   h1{font-size:32px!important}
   .quote-box{flex-direction:column;text-align:center;align-items:center!important}
+}
+@media (max-width:374px){
+  .nav-login{display:none}
 }
 </style>
 </head>
@@ -107,9 +116,9 @@ img{max-width:100%;display:block}
 <header style="position:sticky;top:0;z-index:50;padding:20px 24px;background:linear-gradient(#fff 70%,rgba(255,255,255,0))">
   <nav class="nav-pill" style="max-width:1200px;margin:0 auto;height:60px;background:#fff;border-radius:30px;box-shadow:var(--of-shadow-nav);display:flex;align-items:center;gap:32px;padding:0 12px 0 28px">
     <a href="#top" style="font-weight:700;font-size:20px;letter-spacing:-0.5px;color:var(--of-ink)">Wiz<span style="color:var(--of-blue)">Tax</span></a>
-    <div style="margin-left:auto;display:flex;align-items:center;gap:28px">
-      <a href="https://wiz-tax.wiz-expert.com/login" style="font-size:15px;font-weight:500;color:var(--of-ink-2,#555);letter-spacing:-.3px;transition:color .2s">Se connecter</a>
-      <a class="btn-primary" href="https://calendly.com/julien-wizify/wizexpert" style="display:inline-flex;align-items:center;gap:8px;background:var(--of-blue);color:#fff;font-weight:700;font-size:14px;padding:11px 22px;border-radius:24px">Réserver une démo
+    <div class="nav-actions" style="margin-left:auto;display:flex;align-items:center;gap:28px">
+      <a class="nav-login" href="https://wiz-tax.wiz-expert.com/login" style="white-space:nowrap;font-size:15px;font-weight:500;color:var(--of-ink-2,#555);letter-spacing:-.3px;transition:color .2s">Se connecter</a>
+      <a class="btn-primary nav-demo" href="https://calendly.com/julien-wizify/wizexpert" style="white-space:nowrap;display:inline-flex;align-items:center;gap:8px;background:var(--of-blue);color:#fff;font-weight:700;font-size:14px;padding:11px 22px;border-radius:24px">Réserver une démo
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
       </a>
     </div>
@@ -536,10 +545,10 @@ img{max-width:100%;display:block}
       <h2 style="font-size:clamp(24px,2.8vw,32px);font-weight:700;letter-spacing:-1px;color:var(--of-ink);margin-bottom:16px">Guillaume Simonin</h2>
       <p style="font-size:15px;line-height:1.75;color:var(--of-ink-2);max-width:560px">Ancien CGP, je développe aujourd'hui des <b style="color:var(--of-ink)">contenus pédagogiques et des solutions</b> pour aider les CGP à développer leur cabinet en exploitant le <b style="color:var(--of-ink)">pouvoir de l'éducation financière</b>. WizTax est le 3ᵉ outil WizExpert, après WizApp et WizValue, déjà adoptés par <b style="color:var(--of-ink)">230+ cabinets</b>.</p>
       <ul style="display:flex;flex-direction:column;gap:12px;margin-top:24px">
-        <li style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--of-ink-2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--of-blue);flex:none"></span>Créateur des <b style="color:var(--of-ink)">feuilles volantes</b></li>
-        <li style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--of-ink-2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--of-blue);flex:none"></span><b style="color:var(--of-ink)">+140k abonnés</b> sur les réseaux</li>
-        <li style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--of-ink-2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--of-blue);flex:none"></span>Auteur du <b style="color:var(--of-ink)">Guide visuel d'éducation financière</b></li>
-        <li style="display:flex;gap:10px;align-items:center;font-size:14px;color:var(--of-ink-2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--of-blue);flex:none"></span>Chroniqueur <b style="color:var(--of-ink)">BFM Business</b></li>
+        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;color:var(--of-ink-2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--of-blue);flex:none;margin-top:.6em"></span><span>Créateur des <b style="color:var(--of-ink)">feuilles volantes</b></span></li>
+        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;color:var(--of-ink-2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--of-blue);flex:none;margin-top:.6em"></span><span><b style="color:var(--of-ink)">+140k abonnés</b> sur les réseaux</span></li>
+        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;color:var(--of-ink-2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--of-blue);flex:none;margin-top:.6em"></span><span>Auteur du <b style="color:var(--of-ink)">Guide visuel d'éducation financière</b></span></li>
+        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.5;color:var(--of-ink-2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--of-blue);flex:none;margin-top:.6em"></span><span>Chroniqueur <b style="color:var(--of-ink)">BFM Business</b></span></li>
       </ul>
     </div>
   </div>
