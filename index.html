@@ -2,147 +2,261 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WizExpert — La pédagogie visuelle pour décupler son activité de CGP</title>
-<meta name="description" content="La pédagogie visuelle pour décupler son activité de CGP indépendant.">
-<meta property="og:title" content="WizExpert">
-<meta property="og:description" content="La pédagogie visuelle pour décupler son activité de CGP indépendant.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WizExpert · Génération de leads pour CGP et cabinets</title>
+<meta name="description" content="Trois outils de génération de leads pour CGP indépendants et cabinets : WizTax, WizValue et WizApp attirent vos prospects, leur expliquent leur situation et les amènent à signer.">
+<link rel="canonical" href="https://www.wiz-expert.com/">
+<meta property="og:title" content="WizExpert · Attirez. Expliquez. Signez.">
+<meta property="og:description" content="Trois outils de génération de leads pour CGP indépendants et cabinets : WizTax, WizValue et WizApp attirent vos prospects, leur expliquent leur situation et les amènent à signer.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://www.wiz-expert.com/">
+<meta property="og:image" content="https://www.wiz-expert.com/assets/img/guillaume-simonin.jpg">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
 <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+/* Landing WizExpert, direction « Le Journal » :
+   le texte fait le design, très grands titres Poppins, filets noirs de 2px, lignes d'index,
+   dalle bleue arrondie 40px pour le moment fort, surlignage menthe. Pas d'illustration décorative. */
 :root{
-  --of-font:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --of-ease:cubic-bezier(.4,0,.2,1);
-  --of-ink:#1A1A1A;
-  --of-ink-2:#555;
-  --of-mute:#999;
-  --of-blue:#3340FA;
-  --of-blue-pressed:#2A36E0;
-  --of-blue-100:#E8E9FF;
-  --of-blue-50:#F0F4FF;
-  --of-mint:#26DEB5;
+  color-scheme:light;
+  --font:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --ink:#1A1A1A; --ink-2:#555; --mute:#868AA3;
+  --blue:#3340FA; --blue-press:#2A36E0; --blue-200:#D6D9FE; --blue-100:#E8E9FF; --blue-50:#F0F4FF;
+  --mint:#26DEB5; --mint-ink:#0E8F6F;
+  --line:#E5E7EB; --white:#fff;
+  --shadow-nav:0 1px 17px rgba(0,0,0,.08);
+  --on-blue-mute:rgba(255,255,255,.80); --on-blue-line:rgba(255,255,255,.18);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:100%;max-width:100%}
-body{font-family:var(--of-font);color:var(--of-ink);background:#fff;-webkit-font-smoothing:antialiased}
+html,body{max-width:100%;overflow-x:hidden}
+body{font-family:var(--font);color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased;font-size:15px}
 img{display:block;max-width:100%}
-a{text-decoration:none;color:inherit}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{text-wrap:balance}
+:focus-visible{outline:3px solid var(--blue-200);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:700px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+mark{background:linear-gradient(transparent 58%,rgba(38,222,181,.5) 58%);color:inherit}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;font-weight:700;font-size:15px;padding:15px 28px;border-radius:12px;border:0;transition:background .2s var(--ease),transform .2s var(--ease)}
+.btn:hover{background:var(--blue-press);transform:translateY(-1px)}
+.btn-ghost{background:#fff;color:var(--blue);border:2px solid var(--blue);padding:13px 26px}
+.btn-ghost:hover{background:var(--blue-50)}
 
-.stage{background:var(--of-blue);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:64px;padding:100px 24px;box-shadow:0 4px 80px rgba(0,0,0,.25)}
-.brand{height:48px;width:auto}
-.cards{display:flex;flex-direction:row;justify-content:center;align-items:stretch;gap:32px;width:100%;max-width:1040px;flex-wrap:wrap}
-.card{background:#fff;border-radius:20px;flex:1 1 260px;min-width:260px;max-width:320px;display:flex;flex-direction:column;align-items:center;gap:26px;padding:32px 16px 36px;box-shadow:0 4px 40px rgba(0,0,0,.25);transition:transform .2s var(--of-ease),box-shadow .2s var(--of-ease)}
-.card:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(0,0,0,.28)}
-.card-media{width:200px;height:200px;display:flex;align-items:center;justify-content:center}
-.card-media img{width:100%;height:100%;object-fit:contain}
-.card-title{font-size:32px;font-weight:600;letter-spacing:-2px;line-height:1.2;text-align:center;color:var(--of-ink)}
-.card-title span{color:var(--of-blue)}
-.card-sub{font-size:16px;font-weight:400;letter-spacing:-.5px;line-height:1.4;text-align:center;color:var(--of-ink);max-width:240px}
+/* nav */
+.site-nav{padding-block:20px}
+.nav-pill{min-height:60px;background:#fff;border-radius:30px;box-shadow:var(--shadow-nav);display:flex;align-items:center;gap:24px;padding:8px 10px 8px 26px}
+.nav-logo{font-weight:700;font-size:20px;letter-spacing:-.5px}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-size:14px;font-weight:500;color:var(--ink-2)}
+.nav-links a:hover{color:var(--blue)}
+.nav-pill .btn{font-size:14px;padding:11px 22px;border-radius:24px}
+@media (max-width:860px){.nav-links{display:none}.nav-pill .btn{margin-left:auto}}
+@media (max-width:420px){.nav-pill{padding-left:18px}.nav-pill .btn{padding:10px 14px;font-size:13px}}
 
-/* WizTax CSS illustration (no external asset) */
-.wiztax-illu{width:200px;height:200px;border-radius:20px;background:var(--of-blue-50);display:flex;align-items:center;justify-content:center;padding:22px}
-.wiztax-card{width:100%;background:#fff;border:1px solid var(--of-blue-100);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.06);padding:14px}
-.wiztax-eyebrow{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--of-blue);margin-bottom:8px}
-.wiztax-row{display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--of-ink-2);background:#F8F9FA;border-radius:6px;padding:6px 8px;margin-bottom:5px}
-.wiztax-row b{color:var(--of-ink)}
-.wiztax-total{display:flex;justify-content:space-between;align-items:center;background:var(--of-blue);color:#fff;border-radius:7px;padding:8px 9px;margin-top:2px}
-.wiztax-total span{font-size:9px;font-weight:600}
-.wiztax-total b{font-size:13px}
-.wiztax-save{margin-top:8px;font-size:9px;font-weight:700;color:#0E8F6F;text-align:right}
+/* masthead */
+.mast{padding-block:40px 48px;border-bottom:2px solid var(--ink)}
+.mast .eyebrow{color:var(--blue)}
+.mast h1{font-size:clamp(44px,8.4vw,112px);font-weight:800;letter-spacing:clamp(-5px,-.045em,-2px);line-height:.92;margin-top:18px;max-width:11ch}
+.mast h1 span{color:var(--blue)}
+.mast-foot{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-top:40px}
+.mast-foot p{font-size:clamp(17px,1.6vw,20px);line-height:1.55;color:var(--ink-2);max-width:46ch}
+.mast-foot p b{color:var(--ink)}
+.mast-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:820px){.mast-foot{grid-template-columns:1fr}.mast-cta{justify-content:flex-start}}
 
-/* Footer (repris de WizTax) */
-.site-footer{background:var(--of-blue);color:#fff;padding:56px 40px 40px;border-top:1px solid #4450FA}
-.footer-inner{max-width:1200px;margin:0 auto}
-.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid #4450FA}
-.footer-brand{max-width:340px}
-.footer-word{font-weight:700;font-size:20px;letter-spacing:-.5px;margin-bottom:12px}
-.footer-base{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.80)}
-.footer-col-h{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.60);margin-bottom:10px}
-.footer-mail{font-size:14px;color:rgba(255,255,255,.80);font-weight:500}
-.footer-socials{display:flex;gap:14px;margin-top:12px}
-.footer-socials a{color:rgba(255,255,255,.80);transition:color .2s var(--of-ease)}
-.footer-socials a:hover{color:#fff}
-.footer-legal{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:24px}
-.footer-legal small{font-size:12px;color:rgba(255,255,255,.60)}
-.footer-legal .links{display:flex;gap:24px}
-.footer-legal .links a{font-size:12px;color:rgba(255,255,255,.60);font-weight:500;transition:color .2s var(--of-ease)}
-.footer-legal .links a:hover{color:#fff}
+/* preuves */
+.proofs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.proof{padding:26px 24px 26px 0}
+.proof + .proof{padding-left:24px;border-left:1px solid var(--line)}
+.proof b{display:block;font-size:clamp(30px,3.4vw,42px);font-weight:700;letter-spacing:-1.5px;color:var(--blue);font-variant-numeric:tabular-nums;line-height:1.1}
+.proof span{display:block;font-size:13.5px;color:var(--ink-2);line-height:1.45;margin-top:6px}
+@media (max-width:620px){.proofs{grid-template-columns:1fr}.proof + .proof{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
 
-@media (max-width:820px){
-  .cards{flex-direction:column;align-items:center;gap:24px;max-width:400px}
-  .card{width:100%;max-width:100%;flex:none}
-  .stage{gap:44px;padding:64px 20px}
-}
+/* section générique */
+.sec{padding-block:88px 0}
+.sec-head{display:grid;grid-template-columns:200px minmax(0,1fr);gap:16px 40px;align-items:start;padding-bottom:28px;border-bottom:2px solid var(--ink)}
+.sec-head .eyebrow{padding-top:12px}
+.sec-head h2{font-size:clamp(30px,4.2vw,54px);font-weight:700;letter-spacing:-2px;line-height:1.04;text-wrap:pretty}
+.sec-head h2 span{color:var(--blue)}
+@media (max-width:820px){.sec{padding-block:64px 0}.sec-head{grid-template-columns:1fr}.sec-head .eyebrow{padding-top:0}}
+
+/* constat AMF */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:32px 64px;padding-top:36px}
+.split .lede{font-size:17px;line-height:1.7;color:#2B2B2B;max-width:44ch}
+.split .lede + .lede{margin-top:16px}
+.wf{display:flex;flex-direction:column;gap:22px}
+.rib-wrap{display:flex;flex-direction:column;gap:6px}
+.rib{width:100%;height:auto;display:block;font-family:var(--font)}
+.rib-tag{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mute)}
+.wf-punch{font-size:clamp(22px,2.4vw,30px);font-weight:600;letter-spacing:-.8px;line-height:1.25;color:var(--ink)}
+.wf-punch b{color:var(--blue);font-weight:700}
+.share-src{font-size:12px;color:var(--mute);margin-top:4px}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+
+/* outils en index */
+.tool{display:grid;grid-template-columns:200px minmax(0,1fr) 220px;gap:12px 40px;align-items:baseline;padding-block:36px;border-bottom:1px solid var(--line);transition:background .2s var(--ease)}
+.tool:hover h3{color:var(--blue)}
+.tool-name{font-size:24px;font-weight:700;letter-spacing:-.8px}
+.tool-name span{color:var(--blue)}
+.tool-name small{display:block;font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--mute);margin-top:6px}
+.tool h3{font-size:clamp(22px,2.6vw,32px);font-weight:600;letter-spacing:-1px;line-height:1.15;transition:color .2s var(--ease)}
+.tool p{font-size:15.5px;line-height:1.6;color:var(--ink-2);margin-top:12px;max-width:58ch}
+.tool ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--ink-2)}
+.tool li{padding-left:18px;position:relative;line-height:1.45}
+.tool li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--mint)}
+.tool .go{display:inline-block;margin-top:16px;font-size:14px;font-weight:700;color:var(--blue)}
+@media (max-width:960px){.tool{grid-template-columns:minmax(0,1fr)}.tool ul{flex-direction:row;flex-wrap:wrap;gap:8px 20px}}
+
+/* dalle Guillaume */
+.slab{margin-top:96px;background:var(--blue);color:#fff;border-radius:40px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:32px 56px;align-items:center;box-shadow:0 4px 70px rgba(0,0,0,.18)}
+.slab .eyebrow{color:var(--mint)}
+.slab blockquote{font-size:clamp(24px,3.2vw,40px);font-weight:600;letter-spacing:-1.2px;line-height:1.2;margin-top:18px}
+.slab cite{display:block;font-style:normal;font-size:14px;color:var(--on-blue-mute);margin-top:20px;font-weight:500}
+.slab cite b{color:#fff;font-weight:700}
+.slab-side{display:flex;flex-direction:column;gap:18px}
+.slab-photo{border-radius:20px;overflow:hidden;aspect-ratio:1/1;max-width:220px;background:var(--blue-press)}
+.slab-photo img{width:100%;height:100%;object-fit:cover}
+.slab-creds{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--on-blue-line)}
+.slab-creds div{padding:12px 12px 12px 0;font-size:13px;color:var(--on-blue-mute);line-height:1.4;border-bottom:1px solid var(--on-blue-line)}
+.slab-creds div:nth-child(even){padding-left:12px;border-left:1px solid var(--on-blue-line)}
+.slab-creds b{display:block;color:#fff;font-size:15px}
+@media (max-width:820px){.slab{grid-template-columns:1fr;border-radius:28px}.slab-photo{max-width:140px}}
+
+/* cycle */
+.cycle{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding-top:8px}
+.step{padding:28px 24px 8px 0;display:flex;flex-direction:column;gap:10px}
+.step + .step{padding-left:24px;border-left:1px solid var(--line)}
+.step-n{font-size:13px;font-weight:700;color:var(--mute);font-variant-numeric:tabular-nums}
+.step h3{font-size:22px;font-weight:700;letter-spacing:-.6px}
+.step p{font-size:14.5px;line-height:1.6;color:var(--ink-2)}
+.step .with{margin-top:auto;padding-top:8px;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue)}
+@media (max-width:900px){.cycle{grid-template-columns:repeat(2,minmax(0,1fr))}.step:nth-child(3){padding-left:0;border-left:0}.step:nth-child(n+3){border-top:1px solid var(--line);margin-top:20px}}
+@media (max-width:520px){.cycle{grid-template-columns:1fr}.step + .step{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* fin */
+.end{margin-top:104px;border-top:2px solid var(--ink);padding-top:44px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px 64px;align-items:end}
+.end h2{font-size:clamp(34px,5.4vw,72px);font-weight:800;letter-spacing:-2.6px;line-height:.98}
+.end h2 span{color:var(--blue)}
+.end p{font-size:16px;line-height:1.6;color:var(--ink-2);margin-bottom:20px}
+.end .row{display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:820px){.end{grid-template-columns:1fr}}
+
+.cycle-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.note-metier{font-size:14px;color:var(--mute);padding-top:20px}
+@media (max-width:820px){.cycle-3{grid-template-columns:1fr}.cycle-3 .step + .step{padding-left:0;border-left:0;border-top:1px solid var(--line);margin-top:0}}
+.site-footer{background:var(--blue);color:#fff;margin-top:96px}
+.site-footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-block:44px}
+.site-footer b{font-size:20px;letter-spacing:-.5px}
+.site-footer p{font-size:13px;color:var(--on-blue-mute);line-height:1.6;max-width:340px;margin-top:8px}
+.site-footer nav{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--on-blue-mute);align-self:flex-end}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<main class="stage">
-  <img class="brand" src="/assets/img/MpgM46r1AbzcuqHUFIDoTqBC7cw.png" alt="WizExpert">
-  <div class="cards">
 
-    <!-- WizApp -->
-    <a class="card" href="/wiz-app">
-      <div class="card-media"><img src="/assets/img/u8CG1okjDVYNSfySzNGHkiuhGl4.png" alt="WizApp"></div>
-      <div class="card-title">WizApp</div>
-      <div class="card-sub">Deviens le CGP d'excellence que tout le monde recommande</div>
-    </a>
+<div class="site-nav wrap"><nav class="nav-pill">
+  <a class="nav-logo" href="/">Wiz<span>Expert</span></a>
+  <div class="nav-links"><a href="#methode">Le système</a><a href="#outils">Les outils</a><a href="#guillaume">Qui sommes-nous</a></div>
+  <a class="btn" href="https://calendly.com/julien-wizify/wizexpert">Réserver une démo</a>
+</nav></div>
 
-    <!-- WizValue -->
-    <a class="card" href="/wiz-value">
-      <div class="card-media"><img src="/assets/img/aPZlHYkUk6zeCLFiQU6UT0SvTk.png" alt="WizValue"></div>
-      <div class="card-title">WizValue</div>
-      <div class="card-sub">Attirez des dirigeants en illimité avec WizValue</div>
-    </a>
+<main class="wrap" id="top">
 
-    <!-- WizTax (nouveau) -->
-    <a class="card" href="/wiz-tax">
-      <div class="card-media">
-        <div class="wiztax-illu">
-          <div class="wiztax-card">
-            <div class="wiztax-eyebrow">Impôt 2026</div>
-            <div class="wiztax-row"><span>Revenus</span><b>96 000 €</b></div>
-            <div class="wiztax-row"><span>Quotient</span><b>2 parts</b></div>
-            <div class="wiztax-total"><span>Impôt estimé</span><b>11 480 €</b></div>
-            <div class="wiztax-save">− 4 230 € / an</div>
-          </div>
-        </div>
+  <section class="mast">
+    <div class="eyebrow">WizExpert · Génération de leads pour CGP et cabinets</div>
+    <h1>Attirez. Expliquez. <span>Signez.</span></h1>
+    <div class="mast-foot">
+      <p>Trois outils qui vous apportent <b>des prospects prêts à décider</b>. Pour les CGP indépendants et les cabinets.</p>
+      <div class="mast-cta"><a class="btn" href="#outils">Voir les 3 outils →</a><a class="btn btn-ghost" href="https://calendly.com/julien-wizify/wizexpert">Réserver une démo</a></div>
+    </div>
+  </section>
+
+  <section class="proofs" aria-label="En chiffres">
+    <div class="proof"><b>230+</b><span>cabinets de CGP équipés</span></div>
+    <div class="proof"><b>3</b><span>outils : WizTax, WizValue, WizApp</span></div>
+    <div class="proof"><b>24h/24</b><span>vos outils captent des leads sur votre site</span></div>
+  </section>
+
+  <section class="sec" aria-labelledby="constat">
+    <div class="sec-head"><div class="eyebrow">Le constat</div><h2 id="constat">Vos prospects ne manquent pas d'informations. <span>Ils manquent de clarté.</span></h2></div>
+    <div class="split">
+      <div>
+        <p class="lede">Ils hésitent, comparent, « vont réfléchir », puis disparaissent. Pendant ce temps, une minorité d'acteurs capte l'essentiel du marché.</p>
+        <p class="lede">Ce qui fait la différence : <mark>donner au prospect une raison de venir, et un chiffre qu'il comprend</mark>. C'est exactement ce que font nos outils.</p>
       </div>
-      <div class="card-title">WizTax</div>
-      <div class="card-sub">La planification fiscale active pour les CGP</div>
-    </a>
+      <div class="wf" role="img" aria-label="Sur 100 cabinets, 1 réalise 50 % du chiffre d'affaires, 10 en réalisent 33 %, et les 89 autres se partagent 17 %">
+        <p class="wf-punch"><b>1 cabinet sur 100</b> réalise <b>la moitié</b> du chiffre d'affaires du marché.</p>
+        <div class="rib-wrap"><span class="rib-tag">100 cabinets de CGP</span>
+        <svg class="rib" viewBox="0 0 600 300" aria-hidden="true">
+          <path d="M0 76 C0 153 0 153 0 230 L300 230 C300 153 6 153 6 76 Z" fill="#3340FA" fill-opacity=".55"/><path d="M6 76 C6 153 300 153 300 230 L498 230 C498 153 66 153 66 76 Z" fill="#C9CCD8" fill-opacity=".45"/><path d="M66 76 C66 153 498 153 498 230 L600 230 C600 153 600 153 600 76 Z" fill="#C9CCD8" fill-opacity=".3"/>
+          <rect x="0" y="40" width="6" height="36" fill="#3340FA"/><rect x="6" y="40" width="60" height="36" fill="#9CA2FD"/><rect x="66" y="40" width="534" height="36" fill="#E2E4EC"/>
+          <path d="M3 40V30" stroke="#3340FA" stroke-width="1.5"/><path d="M36 40V30H122" fill="none" stroke="#6B74FB" stroke-width="1.5"/>
+          <text x="0" y="22" font-size="22" font-weight="700" fill="#3340FA">1 cabinet</text>
+          <text x="128" y="36" font-size="19" font-weight="600" fill="#6B74FB">10 cabinets</text>
+          <text x="333" y="65" font-size="19" font-weight="600" fill="#6B7087" text-anchor="middle">89 cabinets</text>
+          <rect x="0" y="230" width="300" height="62" fill="#3340FA"/><rect x="300" y="230" width="198" height="62" fill="#9CA2FD"/><rect x="498" y="230" width="102" height="62" fill="#E2E4EC"/>
+          <text x="150" y="272" font-size="32" font-weight="800" fill="#fff" text-anchor="middle">50 %</text>
+          <text x="399" y="270" font-size="26" font-weight="700" fill="#1A1A1A" text-anchor="middle">33 %</text>
+          <text x="549" y="268" font-size="22" font-weight="700" fill="#6B7087" text-anchor="middle">17 %</text>
+        </svg>
+        <span class="rib-tag">100 % du chiffre d'affaires du marché</span></div>
+        <p class="share-src">Part du chiffre d'affaires total des CIF. Source : AMF, étude 2023.</p>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <section class="sec" id="methode" aria-labelledby="methode-h">
+    <div class="sec-head"><div class="eyebrow">Le système</div><h2 id="methode-h">Chaque outil fait les 3 étapes. <span>Du premier clic à la signature.</span></h2></div>
+    <div class="cycle cycle-3">
+      <div class="step"><span class="step-n">1</span><h3>Attirer</h3><p>Le prospect arrive sur votre site, votre LinkedIn ou votre agence pour obtenir une information qu'il n'a pas : son impôt, la valeur de son entreprise, une notion enfin claire.</p><span class="with">Vous récupérez : un lead qualifié</span></div>
+      <div class="step"><span class="step-n">2</span><h3>Expliquer</h3><p>Il reçoit sa réponse en images, sur sa propre situation. Il comprend ce qu'il paie, ce que vaut ce qu'il a construit, ce qu'il perd à ne rien faire.</p><span class="with">La pédagogie est incluse</span></div>
+      <div class="step"><span class="step-n">3</span><h3>Convertir</h3><p>Il arrive au rendez-vous en connaissant déjà son problème, chiffré. Le rendez-vous n'est plus un pitch : la décision vient de lui.</p><span class="with">Rapport et scripts fournis</span></div>
+    </div>
+  </section>
+
+  <section class="sec" id="outils" aria-labelledby="outils-h">
+    <div class="sec-head"><div class="eyebrow">Les outils</div><h2 id="outils-h">Trois portes d'entrée vers <span>vos prochains clients.</span></h2></div>
+    <a class="tool" href="/wiz-tax">
+      <div class="tool-name">Wiz<span>Tax</span><small>Leads par l'impôt</small></div>
+      <div><h3>Ce que leur inaction leur coûte, en euros.</h3><p>Un simulateur d'impôt en marque blanche sur votre site. Le visiteur calcule son impôt, voit son potentiel d'optimisation et laisse son e-mail pour recevoir son rapport. Vous recevez sa situation et son chiffre avant le premier échange.</p><span class="go">Découvrir WizTax →</span></div>
+      <ul><li>Leads qualifiés 24h/24</li><li>Rapport personnalisé au prospect</li><li>Moteur fiscal pour vos simulations</li></ul>
+    </a>
+    <a class="tool" href="/wiz-value">
+      <div class="tool-name">Wiz<span>Value</span><small>Leads dirigeants</small></div>
+      <div><h3>La valeur de leur entreprise. Ils viennent la chercher chez vous.</h3><p>98 % des dirigeants de PME ne connaissent pas la valeur de leur société. Votre lien d'estimation, diffusé sur LinkedIn ou en signature mail, leur fait remplir un quiz et leur envoie un rapport à votre nom.</p><span class="go">Découvrir WizValue →</span></div>
+      <ul><li>Lien d'estimation personnel</li><li>Rapport PDF à votre nom</li><li>Séquences e-mail et scripts de RDV</li></ul>
+    </a>
+    <a class="tool" href="/wiz-app">
+      <div class="tool-name">Wiz<span>App</span><small>Leads par la recommandation</small></div>
+      <div><h3>Des feuilles volantes que vos clients partagent pour vous.</h3><p>Toutes les notions financières en une image, à votre logo. Vous les publiez pour attirer, vous les montrez en rendez-vous pour convaincre, et vos clients les transmettent à leur entourage.</p><span class="go">Découvrir WizApp →</span></div>
+      <ul><li>Feuilles à votre logo</li><li>Contenus prêts pour vos réseaux</li><li>Bouche-à-oreille outillé</li></ul>
+    </a>
+    <p class="note-metier">Chaque outil comprend aussi des fonctionnalités métier pour vos rendez-vous et vos dossiers clients. On vous les montre en démo.</p>
+  </section>
+
+  <section class="slab" id="guillaume" aria-label="Le fondateur">
+    <div><div class="eyebrow">Le fondateur</div>
+      <blockquote>« Vous ne vendez pas un placement. Vous révélez la fuite. Le prospect voit ce que sa situation lui coûte, en euros, et la décision vient de lui. »</blockquote>
+      <cite><b>Guillaume Simonin</b>, ancien CGP, fondateur de WizExpert</cite></div>
+    <div class="slab-side">
+      <div class="slab-photo"><img src="/assets/img/guillaume-simonin.jpg" alt="Guillaume Simonin"></div>
+      <div class="slab-creds"><div><b>Feuilles volantes®</b>créateur du format</div><div><b>+140k</b>abonnés sur les réseaux</div><div><b>Le guide visuel</b>d'éducation financière, auteur</div><div><b>BFM Business</b>chroniqueur</div></div>
+    </div>
+  </section>
+
+  <section class="end" aria-labelledby="end-h">
+    <h2 id="end-h">30 minutes pour voir <span>d'où viendront vos prochains clients.</span></h2>
+    <div><p>Une démo sur l'activité réelle de votre cabinet. Sans engagement.</p><div class="row"><a class="btn" href="https://calendly.com/julien-wizify/wizexpert">Réserver une démo →</a></div></div>
+  </section>
 </main>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-word"><a href="https://www.wiz-expert.com/" style="color:inherit;text-decoration:none">WizExpert</a></div>
-        <p class="footer-base">La pédagogie visuelle pour décupler son activité de CGP indépendant. WizApp · WizValue · WizTax.</p>
-      </div>
-      <div>
-        <div class="footer-col-h">Contact</div>
-        <a class="footer-mail" href="mailto:hello@wiz-expert.com">hello@wiz-expert.com</a>
-        <div class="footer-socials">
-          <a href="https://www.linkedin.com/company/wiz-expert/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-legal">
-      <small>© <span data-year>2026</span> <a href="https://www.wiz-expert.com/" style="color:inherit;text-decoration:none">WizExpert</a>. Tous droits réservés.</small>
-      <div class="links">
-        <a href="/mentions-legales">Mentions légales</a>
-        <a href="/cgv">CGV</a>
-        <a href="/politique-de-confidentialite">RGPD</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<script>document.querySelectorAll("[data-year]").forEach(function(e){e.textContent=new Date().getFullYear()});</script>
+<footer class="site-footer"><div class="wrap"><div><b>WizExpert</b><p>La pédagogie visuelle pour décupler son activité de CGP indépendant. WizApp · WizValue · WizTax.</p></div><nav><a href="/mentions-legales">Mentions légales</a><a href="/cgv">CGV</a><a href="/politique-de-confidentialite">RGPD</a></nav></div></footer>
 <script src="/assets/js/affiliate-ref.js" defer></script>
 </body>
 </html>
