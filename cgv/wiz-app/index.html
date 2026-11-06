@@ -221,13 +221,13 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
 
   <h3>1. Parties, objet et durée</h3>
   <p><strong>Responsable du traitement</strong> : le Client utilisant WizApp. <strong>Sous-traitant</strong> : la Société.</p>
-  <p><strong>Objet.</strong> La Société met à disposition du Client la fonctionnalité Guides de WizApp : un guide composé de feuilles volantes, publié sur une page au nom du Client et intégrable à son site, que les visiteurs lisent après avoir laissé leurs coordonnées. La Société traite les données personnelles des prospects du Client uniquement pour fournir ce service.</p>
+  <p><strong>Objet.</strong> La Société met à disposition du Client la fonctionnalité Guides de WizApp : un guide composé de feuilles volantes, publié sur une page au nom du Client et intégrable à son site, que les visiteurs lisent après avoir laissé leurs coordonnées et reçoivent ensuite par email, au format PDF, au nom du Client. La Société traite les données personnelles des prospects du Client uniquement pour fournir ce service.</p>
   <p><strong>Durée.</strong> L'annexe s'applique pendant toute la durée d'utilisation des Guides par le Client, puis jusqu'à la suppression ou la restitution complète des données prévue au point 3.8.</p>
   <p><strong>Contact.</strong> Pour toute question relative aux données personnelles : <a href="mailto:hello@wiz-expert.com">hello@wiz-expert.com</a>.</p>
 
   <h3>2. Description du traitement</h3>
   <div class="table-wrap"><table>
-    <tr><th>Finalités</th><td>Accès du prospect au guide, transmission de ses coordonnées au Client pour qu'il le recontacte, notification du Client par email</td></tr>
+    <tr><th>Finalités</th><td>Accès du prospect au guide, envoi au prospect d'un email contenant le lien de téléchargement du guide en PDF et les coordonnées du Client, transmission de ses coordonnées au Client pour qu'il le recontacte, notification du Client par email</td></tr>
     <tr><th>Personnes concernées</th><td>Visiteurs qui laissent leurs coordonnées pour lire un guide du Client</td></tr>
     <tr><th>Données d'identification</th><td>Email, téléphone (si le Client le demande), date du consentement</td></tr>
     <tr><th>Données techniques</th><td>Adresse IP et données de connexion nécessaires au fonctionnement et à la sécurité du service (limitation des abus)</td></tr>
@@ -264,7 +264,7 @@ header.nav{position:sticky;top:0;z-index:60;padding:20px 24px;background:linear-
   <div class="table-wrap"><table>
     <tr><th>Sous-traitant</th><th>Service</th><th>Données des prospects concernées</th><th>Localisation</th></tr>
     <tr><td>Heroku (Salesforce, Inc.), sur infrastructure Amazon Web Services</td><td>Hébergement de l'application et de la base de données</td><td>Toutes les données listées au point 2</td><td>UE (région Europe) ; société américaine certifiée DPF</td></tr>
-    <tr><td>SendGrid (Twilio Inc.)</td><td>Envoi de l'email de notification d'un nouveau prospect au Client</td><td>Email et téléphone du prospect, titre du guide</td><td>États-Unis ; certifiée DPF</td></tr>
+    <tr><td>SendGrid (Twilio Inc.)</td><td>Envoi au prospect de l'email contenant le guide en PDF ; envoi au Client de l'email de notification d'un nouveau prospect</td><td>Email et téléphone du prospect, titre du guide</td><td>États-Unis ; certifiée DPF</td></tr>
     <tr><td>Google Cloud (Google LLC)</td><td>Stockage des illustrations des feuilles et du logo du Client</td><td>Aucune</td><td>UE ; société américaine certifiée DPF</td></tr>
   </table></div>
   <p>Les autres outils de la Société (ActiveCampaign, Stripe, Pennylane) servent à la relation avec ses propres clients et ne reçoivent aucune donnée des prospects.</p>
